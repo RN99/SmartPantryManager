@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SmartPantryManager</string>
+    <string name="title_activity_add_ingredient">AddIngredientActivity</string>
+
+    <string name="hint_name">Ingredient Name</string>
+    <string name="hint_quantity">Quantity</string>
+    <string name="hint_unit">Unit (e.g. grams, ml)</string>
+    <string name="hint_expiry">Expiry Date (YYYY-MM-DD)</string>
+    <string name="button_save">Save Ingredient</string>
+    <string name="empty_pantry">Your pantry is empty.\nTap + to add your first ingredient!</string>
+    <string name="empty_recipes">No recipes match your pantry yet.\nAdd more ingredients!</string>
+    <string name="title_pantry">My Pantry</string>
+    <string name="title_recipes">Suggested Recipes</string>
+
+</resources>

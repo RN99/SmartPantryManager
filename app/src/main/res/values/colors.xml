@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroundLight">#FFFFFF</color>
+    <color name="cardBackground">#F5F5F5</color>
+    <color name="textPrimary">#244B36</color>
+    <color name="textSecondary">#555555</color>
+    <color name="accent">#244B36</color>
+    <color name="errorRed">#D32F2F</color>
+    <color name="white">#FFFFFF</color>
+
+</resources>
