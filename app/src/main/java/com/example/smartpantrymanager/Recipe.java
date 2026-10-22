@@ -17,6 +17,9 @@ public class Recipe {
         this.steps = steps;
     }
 
+    public Recipe(int anInt, String string, String string1) {
+    }
+
     // Getters and setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
