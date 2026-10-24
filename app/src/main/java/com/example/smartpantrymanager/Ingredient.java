@@ -1,5 +1,9 @@
 package com.example.smartpantrymanager;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Ingredient {
     private int id;
     private String name;
@@ -7,8 +11,7 @@ public class Ingredient {
     private String unit;
     private String expiryDate;
 
-    public Ingredient() {}
-
+    //  Constructor to match MainActivity
     public Ingredient(int id, String name, double quantity, String unit, String expiryDate) {
         this.id = id;
         this.name = name;
@@ -17,20 +20,42 @@ public class Ingredient {
         this.expiryDate = expiryDate;
     }
 
-    // Getters and setters
+    // Getters
     public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
     public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
     public double getQuantity() { return quantity; }
-    public void setQuantity(double quantity) { this.quantity = quantity; }
-
     public String getUnit() { return unit; }
-    public void setUnit(String unit) { this.unit = unit; }
-
     public String getExpiryDate() { return expiryDate; }
-    public void setExpiryDate(String expiryDate) { this.expiryDate = expiryDate; }
-}
 
+    // method to check expiry
+    public boolean isExpired() {
+        if (expiryDate == null || expiryDate.isEmpty()) {
+            return false;
+        }
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date expiry = sdf.parse(expiryDate);
+            Date today = new Date();
+            return expiry.before(today);
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+
+    // Check if expiring soon (within 3 days)
+    public boolean isExpiringSoon() {
+        if (expiryDate == null || expiryDate.isEmpty()) {
+            return false;
+        }
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date expiry = sdf.parse(expiryDate);
+            Date today = new Date();
+            long diff = expiry.getTime() - today.getTime();
+            long days = diff / (1000 * 60 * 60 * 24);
+            return days >= 0 && days <= 3;
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+}

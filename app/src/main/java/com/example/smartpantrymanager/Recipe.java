@@ -1,23 +1,24 @@
 package com.example.smartpantrymanager;
 
-
-
 public class Recipe {
     private int id;
     private String name;
     private String ingredients; // stored as comma-separated text
     private String steps;
 
-    public Recipe() {}
-
-    public Recipe(int id, String name, String ingredients, String steps) {
-        this.id = id;
+    // Constructor for new recipes (no ID yet)
+    public Recipe(String name, String ingredients, String steps) {
         this.name = name;
         this.ingredients = ingredients;
         this.steps = steps;
     }
 
-    public Recipe(int anInt, String string, String string1) {
+    // Constructor for recipes loaded from DB (with ID)
+    public Recipe(int id, String name, String ingredients, String steps) {
+        this.id = id;
+        this.name = name;
+        this.ingredients = ingredients;
+        this.steps = steps;
     }
 
     // Getters and setters

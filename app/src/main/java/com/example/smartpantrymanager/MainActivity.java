@@ -7,6 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 
 
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         imageAddIngredient = findViewById(R.id.imageAddIngredient);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ImageView imageViewRecipes = findViewById(R.id.imageViewRecipes);
 
         // Database helper
         dbHelper = new DataBaseHelper(this);
@@ -52,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         // ImageView → AddIngredientActivity
         imageAddIngredient.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddIngredientActivity.class);
+            startActivity(intent);
+        });
+
+        imageViewRecipes.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
             startActivity(intent);
         });
     }
@@ -93,8 +102,37 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, SuggestedRecipesActivity.class));
             return true;
         }
+        else if (id == R.id.menu_add_recipe) {
+            Intent intent = new Intent(this, AddRecipeActivity.class);
+            startActivityForResult(intent, 200); // request code 200 for recipes
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 200 && resultCode == RESULT_OK && data != null) {
+            String recipeName = data.getStringExtra("recipeName");
+            String recipeSteps = data.getStringExtra("recipeSteps");
+            int ingredientCount = data.getIntExtra("ingredientCount", 0);
+
+            //  Add current date
+            String currentDate = new java.text.SimpleDateFormat("yyyy-MM-dd",
+                    java.util.Locale.getDefault()).format(new java.util.Date());
+
+            // Show confirmation
+            Toast.makeText(this,
+                    "Recipe saved: " + recipeName +
+                            " (" + ingredientCount + " ingredients) on " + currentDate,
+                    Toast.LENGTH_LONG).show();
+
+        }
+    }
+
 
 }
 

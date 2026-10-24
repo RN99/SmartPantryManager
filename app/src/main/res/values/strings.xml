@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SmartPantryManager</string>
     <string name="title_activity_add_ingredient">AddIngredientActivity</string>
+    <string name="title_activity_add_recipe">Add Recipe</string>
 
     <string name="hint_name">Ingredient Name</string>
     <string name="hint_quantity">Quantity</string>

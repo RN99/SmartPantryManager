@@ -27,6 +27,38 @@
             android:label="@string/title_activity_add_ingredient"
             android:theme="@style/Theme.SmartPantryManager"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".AddRecipeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_recipe"
+            android:theme="@style/Theme.SmartPantryManager"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".RecipeListActivity"
+            android:theme="@style/Theme.SmartPantryManager"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".RecipeDetailActivity"
+            android:theme="@style/Theme.SmartPantryManager"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Settings"
+            android:theme="@style/Theme.SmartPantryManager"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".SuggestedRecipesActivity"
+            android:exported="false"
+            android:label="Suggested Recipes"
+            android:theme="@style/Theme.SmartPantryManager"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".EditRecipeActivity"
+            android:theme="@style/Theme.SmartPantryManager"
+            android:windowSoftInputMode="adjustResize"/>/>
+
+
     </application>
 
 </manifest>

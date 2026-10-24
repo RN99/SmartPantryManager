@@ -41,7 +41,7 @@
         android:contentDescription="App Logo"
         android:paddingBottom="16dp"/>
 
-    <!-- Empty pantry message (hidden by default) -->
+    <!-- Empty pantry message -->
     <TextView
         android:id="@+id/emptyPantryMessage"
         android:layout_width="match_parent"
@@ -64,8 +64,6 @@
 
     <!-- Icon -->
 
-    <!-- Text below icon -->
-
     <ImageView
         android:id="@+id/imageAddIngredient"
         android:layout_width="56dp"
@@ -73,6 +71,8 @@
         android:layout_gravity="center"
         android:contentDescription="Add Ingredient"
         android:src="@drawable/add" />
+
+    <!-- Text below icon -->
 
     <TextView
         android:id="@+id/textAddIngredient"
@@ -83,5 +83,26 @@
         android:textSize="14sp"
         android:textColor="@android:color/black"
         android:paddingTop="4dp"/>
+
+    <!-- Recipe navigation icon -->
+    <ImageView
+        android:id="@+id/imageViewRecipes"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:contentDescription="View Recipes"
+        android:src="@drawable/pantry" />
+
+    <!-- Text below icon -->
+    <TextView
+        android:id="@+id/textViewRecipes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Recipes"
+        android:layout_gravity="center"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:paddingTop="4dp"/>
+
 
 </LinearLayout>
