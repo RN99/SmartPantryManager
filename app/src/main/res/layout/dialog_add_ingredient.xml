@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/pretty_background"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Ingredient Name -->
+    <EditText
+        android:id="@+id/editIngredientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Ingredient Name"
+        android:inputType="textPersonName"
+        android:padding="8dp"/>
+
+
+    <!-- Quantity -->
+    <EditText
+        android:id="@+id/editIngredientQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Quantity"
+        android:inputType="numberDecimal"
+        android:padding="8dp"/>
+
+    <!-- Unit -->
+    <EditText
+        android:id="@+id/editIngredientUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Unit (e.g. cups, g)"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+    <!-- Expiry Date -->
+    <EditText
+        android:id="@+id/editIngredientExpiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Expiry Date (YYYY-MM-DD)"
+        android:inputType="date"
+        android:padding="8dp"/>
+</LinearLayout>
